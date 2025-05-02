@@ -1,0 +1,27 @@
+.container {
+    display: flex;
+    align-items: center; /* Align items to the top */
+}
+
+.image-container {
+    width: 50%; /* Occupy 50% of the container width */
+    padding-left: 20px;
+    padding-right: 5px; /* Adjust this value for the desired gap */
+    box-sizing: border-box; /* Include padding in the element's total width and height */
+}
+
+.image-container img {
+    display: block; /* Prevents extra space below the image */
+    max-width: 90%; /* Make the image responsive within its container */
+    height: auto;
+}
+
+.text-container {
+    width: 50%; /* Occupy 50% of the container width */
+    padding-top: 50px;
+    padding-left: 20px; /* Add some padding to the left for spacing */
+    padding-right: 20px;
+    box-sizing: border-box; /* Include padding in the element's total width and height */
+    text-align: justify; /* Center the text */
+    font-size: 18px;
+}

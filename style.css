@@ -1,0 +1,356 @@
+/* --- Retro Memoir Gallery Theme --- */
+
+/* Basic Reset & Body Styling */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    /* Fonts defined: 'Playfair Display' for headings, 'Source Code Pro' for body/code-like text */
+    font-family:'Playfair Display', serif;
+    line-height: 1.7;
+    /* Warm, soft background */
+    background-color: #fdfbf5; /* Creamy off-white */
+    color: #5D4037; /* Dark Brown text */
+    padding: 30px;
+    font-size: 1em;
+    /* Optional subtle noise texture */
+    /* background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" width="80" height="80"%3E%3Crect fill="%23fdfbf5" width="80" height="80"/%3E%3Cg fill-rule="evenodd"%3E%3Cg fill="%23d2b48c" fill-opacity="0.1"%3E%3Cpath d="M0 0h40v40H0V0zm40 40h40v40H40V40z"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E'); */
+}
+
+/* Header Styling */
+header {
+    display: flex; /* Enable flexbox for alignment */
+    justify-content: space-between; /* Space out left and right sections */
+    align-items: center; /* Vertically align items in the header */
+    padding: 15px 25px; /* Adjust padding as needed */
+    font-size: 1.2em;
+    /* Add any other header-specific styling like background color, etc. */
+}
+
+.header-left {
+    display: flex; /* Align logo and text horizontally */
+    align-items: center; /* Vertically align logo and text */
+}
+
+.logo {
+    max-height: 50px; /* Adjust logo size as needed */
+    margin-right: 20px; /* Space between logo and text */
+}
+
+.site-title {
+    font-size: 1.2em; /* Adjust font size as needed */
+    color: #333; /* Adjust text color as needed */
+}
+
+.header-nav ul {
+    list-style: none; /* Remove bullet points from the list */
+    padding: 0;
+    margin: 0;
+    display: flex; /* Align list items horizontally */
+}
+
+.header-nav li {
+    margin-left: 20px; /* Space between navigation links */
+}
+
+.header-nav a {
+    text-decoration: none; /* Remove underlines from links */
+    color: #555; /* Adjust link color as needed */
+    font-size: 1em; /* Adjust font size as needed */
+    transition: color 0.3s ease; /* Smooth color transition on hover */
+}
+
+.header-nav a:hover {
+    color: #007bff; /* Example hover color */
+}
+
+/* Slogan Container Styling with Background Image */
+.slogan-container {
+    /* Other styling for your slogan container (e.g., padding, text alignment, etc.) */
+    padding: 200px 30px; /* Increased padding for better visual separation */
+    text-align: center;
+    color: white; /* Example text color */
+    /* Add the background image */
+    background-image: url('assets/images/bg.jpg'); /* Replace with the actual path to your image */
+    background-size: cover; /* Cover the entire container */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
+    margin-bottom: 40px; /* Add some space below the slogan */
+    /* Optional: Add a dark overlay for better text readability if the image is bright */
+    position: relative; /* Needed for absolute positioning of the overlay */
+}
+
+/* Optional: Dark overlay for slogan */
+.slogan-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent black - adjust opacity as needed */
+    z-index: -1; /* Place the overlay behind the text */
+}
+
+.slogan-container h2 {
+    font-family: 'Playfair Display', serif; /* Use a nice heading font */
+    font-size: 3em;
+    margin-bottom: 15px;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); /* Add a text shadow for better visibility */
+}
+
+
+/* About Us Section Styling */
+.about-us-section {
+    display: flex;
+    align-items: center;
+    padding: 100px 30px;
+    max-width: 1200px; /* Increased max-width to make the container wider */
+    margin: 0 auto 40px auto; /* Center and add margin below */
+    background-color: #f9f9f9; /* Light background for the section */
+    border-radius: 8px;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.about-image {
+    flex: 1;
+    margin-right: 50px; /* Slightly increased right margin for more space */
+}
+
+.about-image img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+}
+
+.about-content {
+    flex: 1.5; /* Increased flex to give the content more width relative to the image */
+    text-align: justify;
+}
+
+.about-content h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3em; /* Slightly increased heading size */
+    color: #8B4513; /* Saddle Brown */
+    margin-bottom: 20px; /* Increased bottom margin */
+}
+
+.about-content p {
+    font-size: 1.2em; /* Slightly increased paragraph size */
+    line-height: 1.9; /* Slightly increased line height for better readability */
+    color: #555;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+
+/* Link Buttons Section */
+.link-buttons-section {
+    padding: 30px 25px;
+    margin-bottom: 100px;
+}
+
+.link-buttons-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Force 2 columns */
+    gap: 100px;
+    max-width: 1000px; /* Adjust max width to control the size of the two buttons */
+    margin: 0 auto;
+}
+
+.link-button {
+    display: block;
+    aspect-ratio: 1 / 1; /* Keep them square */
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 12px;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    text-indent: -9999px;
+    overflow: hidden;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.15);
+}
+
+.link-button:hover {
+    transform: scale(1.08);
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.25);
+}
+
+
+
+/* Lightbox Styling & Animation */
+.lightbox {
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(60, 45, 30, 0.9); /* Warm, brownish overlay */
+    overflow: auto;
+    display: flex; /* Use flex for centering */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+
+    /* --- Animation --- */
+    opacity: 0;
+    visibility: hidden; /* Hide element completely when not active */
+    transform: scale(0.95);
+    transition: opacity 0.4s ease, visibility 0.4s ease, transform 0.4s ease;
+}
+
+/* Active state controlled by JS */
+.lightbox.active {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+}
+
+
+#lightbox-img {
+    display: block;
+    max-width: 90%;
+    max-height: 75vh; /* Leave more vertical space for retro feel */
+    margin: auto auto 15px auto;
+    border: 8px solid white; /* Thicker white border */
+    box-shadow: 0 0 30px rgba(0,0,0,0.5);
+    border-radius: 2px;
+}
+
+#lightbox-caption {
+    color: #fdfbf5; /* Light cream color for caption text */
+    text-align: center;
+    font-size: 1.1em;
+    margin-top: 15px;
+    max-width: 70%;
+    font-family: 'Source Code Pro', monospace; /* Typewriter feel */
+    font-weight: 600;
+}
+
+.close-button {
+    position: absolute;
+    top: 25px;
+    right: 40px;
+    color: #fff;
+    font-size: 45px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease, transform 0.3s ease;
+    line-height: 1; /* Ensure consistent positioning */
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+}
+
+.close-button:hover {
+    color: #ccc;
+    transform: scale(1.1);
+}
+
+/* Footer Styling */
+footer {
+    text-align: center;
+    margin-top: 60px;
+    padding-top: 25px;
+    border-top: 1px dashed #D2B48C; /* Dashed tan border */
+    color: #a0522d; /* Sienna */
+    font-size: 1.2em;
+}
+
+footer a {
+    color: #7bccec;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: #38b6d9;
+    text-decoration: underline;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    body { padding: 15px; }
+    header h1 { font-size: 2.2em; }
+    .gallery-grid {
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 25px;
+    }
+    .gallery-item { padding: 10px 10px 35px 10px; }
+    #lightbox-img { max-height: 70vh; border-width: 6px; }
+    #lightbox-caption { font-size: 1em; max-width: 85%; }
+    .close-button { top: 20px; right: 25px; font-size: 40px; }
+    .slogan-container { padding: 60px 15px; }
+    .slogan-container h2 { font-size: 2.2em; }
+    .slogan-container p { font-size: 1.1em; }
+    .about-us-section { padding: 30px 15px; flex-direction: column; text-align: center; }
+    .about-image { margin-right: 0; margin-bottom: 20px; }
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 960px) {
+    .about-us-section {
+        flex-direction: column; /* Stack image and content on smaller screens */
+        text-align: center; /* Center text when stacked */
+        padding: 60px 20px;
+    }
+    .about-image {
+        margin-right: 0;
+        margin-bottom: 30px;
+    }
+    .about-content {
+        flex: none; /* Reset flex when stacked */
+    }
+}
+
+/* About Page Section Styling */
+.about-page-section {
+    padding: 80px 25px; /* Adjust padding as needed */
+    background-color: #f4f4f4; /* Light background */
+}
+
+.about-container {
+    max-width: 1200px; /* Limit container width */
+    margin: 0 auto; /* Center the container */
+    display: flex; /* Enable flexbox for the split layout */
+    align-items: center; /* Vertically align image and content */
+    gap: 40px; /* Space between image and content */
+}
+
+.about-image {
+    flex: 1; /* Image takes up 1 part of the available space */
+    max-width: 400px; /* Adjust maximum image width */
+}
+
+.about-image img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 8px; /* Optional: Rounded corners for the image */
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1); /* Optional: Subtle shadow */
+}
+
+.about-content {
+    flex: 2; /* Content takes up 2 parts of the available space */
+    color: #333; /* Dark text color */
+}
+
+.about-content h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.8em;
+    color: #5D4037; /* Dark brown title */
+    margin-bottom: 20px;
+}
+
+.about-content p {
+    font-family: 'Source Code Pro', monospace;
+    font-size: 1.1em;
+    line-height: 1.8;
+    margin-bottom: 15px;
+    text-align: justify;
+}
+
